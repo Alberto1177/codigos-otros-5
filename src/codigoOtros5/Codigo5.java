@@ -17,26 +17,24 @@ public class Codigo5 {
 	    int noAfo = 0;
 	    
 	    while (ni > 0) {
-	    	
-		  int digito = (int)(ni % 10);
+	    	//No es necesaria la conversion al tratarse del mismo tipo
+		  int digito = ni % 10;
 	      if ((digito == 3) || (digito == 7) || (digito == 8) || (digito == 9)) {
 			afo++;
 	      } else {
 			noAfo++;
-		  
-		  ni /= 10;
+	      }
+	      //Se movio fuera del else
+	      ni /= 10;
 	    }
+	    //Se saco la condicion del while
 	    if (afo > noAfo) {
 	    	//esta mal escrito printfln
 	      System.out.println("El " + c + " es un número afortunado.");
 	    } else {
 	      System.out.println("El " + c + " no es un número afortunado.");
 	    }
-	    
-	  }
+	 //Cerrar el scanner
+        s.close();
 	}
-
-	
-    
-  
 }
